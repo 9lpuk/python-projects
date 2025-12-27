@@ -8,6 +8,12 @@ def imshow(img,window_name):             # img - cv2.imread('путь к фай�
         cv2.imshow(window_name,img)
         cv2.waitKey(0)
         cv2.destroyAllWindows()
-image =  cv2.imread('/home/yarik/Рабочий стол/Python/Git/img.jpeg')
+img =  cv2.imread('/home/yarik/Рабочий стол/Python/Git/img.jpeg')
 window_name = 'window1'
-imshow(image,window_name)
+#кадрирование
+cropped = img[0:150, 0:330]
+print("Размеры (высота, ширина, каналы):", img.shape)
+print("Высота:", img.shape[0])
+print("Ширина:", img.shape[1])
+print("Количество каналов:", img.shape[2] if len(img.shape) == 3 else 1)
+imshow(cropped, "после кадрирования")
